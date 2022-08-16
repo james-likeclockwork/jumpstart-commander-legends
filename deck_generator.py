@@ -27,14 +27,11 @@ with open('halfdecks.json') as jsonFile:
         # Find Commander Options
         for card in jsonData:
             commanders.add(card['categories'][0])
-            # print(card['quantity'],end = ' ')
-            # print(card['card']['oracleCard']['name'], end = ' ')
-            # print("#"+card['categories'][0])
         commanders.remove('Common Cards')
         commanders.remove('Commander')
 
+        # Select Commanders
         selectedCommanders = [];
-
         if firstPartner and commanders.__contains__(firstPartner.capitalize()):
             if secondPartner and commanders.__contains__(secondPartner.capitalize()):
                 selectedCommanders = [firstPartner, secondPartner]
