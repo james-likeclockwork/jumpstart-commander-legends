@@ -19,7 +19,7 @@ secondPartner = '';
 if len(sys.argv) > 2:
     secondPartner = sys.argv[2].capitalize()
 
-commanders = {'Common Cards', 'Commander'}
+commanders = set()
 with open('halfdecks.json') as jsonFile:
         data = json.load(jsonFile)
         jsonData = data['cards']
@@ -27,8 +27,6 @@ with open('halfdecks.json') as jsonFile:
         # Find Commander Options
         for entry in jsonData:
             commanders.add(entry['categories'][0])
-        commanders.remove('Common Cards')
-        commanders.remove('Commander')
 
         # Select Commanders
         selectedCommanders = [];
